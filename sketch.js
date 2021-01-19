@@ -7,7 +7,7 @@ var score;
 var holder,ball,ground;
 var stand1,stand2;
 var ball;
-var slingShot;
+var slingshot;
 var score = 0;
 
 function preload(){
@@ -69,7 +69,7 @@ function setup() {
   ball = Bodies.circle(50,200,20);
   World.add(world,ball);
 
-  slingShot = new SlingShot(this.ball,{x:200,y:200});
+  slingshot = new SlingShot(this.ball,{x:200,y:200}); 
 
 }
 
@@ -162,8 +162,8 @@ function draw() {
  //imageMode(CENTER)
  //ball = loadImage(polygon_img ,ball.position.x-50,ball.position.y-80,40,40);
  // ellipseMode(RADIUS);
-  ellipse(ball.position.x,ball.position.y,20);
-  slingShot.display();
+  ellipse(ball.position.x,ball.position.y,20,20);
+  slingshot.display();
 }
 
 function mouseDragged(){
@@ -171,11 +171,11 @@ function mouseDragged(){
 }
 
 function mouseReleased(){
-  slingShot.fly();
+  slingshot.fly();
 }
 
 function keyPressed(){
   if(keyCode === 32){
-      slingShot.attach(this.ball);
+      slingshot.attach(this.ball);
   }
 }
